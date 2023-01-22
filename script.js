@@ -2,15 +2,24 @@ function GetInfo() {
 
     var newName = document.getElementById("cityInput");
     var cityName = document.getElementById("cityName");
-    cityName.innerHTML = newName.value;
+    cityName.innerHTML = newName.value + "(in C)";
     
+function updateOnlineStatus(event) {
+    var status = document.getElementById("status");
+    var condition = navigator.onLine ? "online" : alert("You Are Offline!\nPlease Turn On Your Internet Connection.");
+    }
+    window.addEventListener('online',  updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+
+updateOnlineStatus();
+
 fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid=32ba0bfed592484379e51106cef3f204')
 .then(response => response.json())
 .then(data => {
 
     //Getting the min and max values for each day
     for(i = 0; i<5; i++){
-        document.getElementById("day" + (i+1) + "Min").innerHTML = "Min: " + Number(data.list[i].main.temp_min - 273.15).toFixed(1)+ "°";
+        document.getElementById("day" + (i+1) + "Min").innerHTML = "Min: " + Number(data.list[i].main.temp_min - 273.15).toFixed(2)+ "°";
         //Number(1.3450001).toFixed(2); // 1.35
     }
 
@@ -31,11 +40,11 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appi
 
 })
 
-.catch(err =>  console.error(err));
+.catch(err =>  alert("Enter a valid City Name!"));
 }
 
 function DefaultScreen(){
-    document.getElementById("cityInput").defaultValue = "London";
+    document.getElementById("cityInput").defaultValue = "Durgapur";
     GetInfo();
 }
 
@@ -57,4 +66,4 @@ function CheckDay(day){
     for(i = 0; i<5; i++){
         document.getElementById("day" + (i+1)).innerHTML = weekday[CheckDay(i)];
     }
-    //------------------------------------------------------------
+    //-----------------------------------------------------------
