@@ -38,7 +38,7 @@ body{
     }
 }
 .heading{
-    margin: 2vh;
+    margin: 10vh;
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: center;
@@ -59,14 +59,14 @@ body{
 }
 .heading:hover{
     background-color: rgba(255, 235, 205, 0.5);
-    color:red;
+    color:rgb(248, 127, 248);
     /* box-shadow: 0 0 20px green; */
     font-weight: bolder;
 }
 .heading2{
     margin: 10vh;
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 30vw;
@@ -76,8 +76,8 @@ body{
     border-radius: 10px;
 }
 .heading2:hover{
-    color: blue;
-    background-color: rgba(227, 102, 204, 0.5);
+    color: rgb(212, 255, 0);
+    background-color: rgba(227, 102, 204, 0.7);
     box-shadow: 0 0 20px green;
     font-weight: bolder;
 }
@@ -178,7 +178,7 @@ button:active {
 .icons{
     /* display: inline-bock; */
     background-color: rgba(255, 228, 196, 0.505);
-    float: left;
+    /* float: left; */
     /* height: 200px;
     width: 190px; */
     margin: 20px;
@@ -189,14 +189,15 @@ button:active {
     box-shadow:  0 0 20px rgb(68, 0, 240);
 }
 .image{
-    height: 140px;
+    height: 20vh;
     width: 100%;
 }
 .image :hover{
-    height: 150px;
+    height: 21vh;
+    background-size: contain;
 }
 .imgClass{
-    height: 140px;
+    height: 20vh;
     background-size: contain;
     width: 100%;
 }
@@ -210,7 +211,7 @@ button:active {
 .weather:hover{
     font-weight: bolder;
     color:blue;
-    font-weight: bolder;
+    font-size: larger;
 }
 .minValues{
     /* display: flexbox; */
@@ -240,4 +241,88 @@ button:active {
 .maxValues:hover{
     color:rgb(4, 32, 146);
     font-weight: bolder;
+}
+@media only screen and (max-width : 700px) {
+    .heading2 {
+        margin: 10vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        box-shadow: 0 0 10px rgb(110, 249, 110);
+        background-color: rgb(227, 102, 204);
+        border: 5px solid green;
+    }
+    .heading{
+        margin: 10vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        box-shadow: 0 0 10px green;
+        background-color: blanchedalmond;
+        border-radius: 25px;
+        animation: headanimation 1s ease 1s infinite;
+    }
+    @keyframes headanimation{
+        0%{
+            box-shadow: 0 0 10px green;
+        }
+        100%{
+            box-shadow: 0 0 20px green;
+        }
+    }
+    .heading:hover{
+        background-color: rgba(255, 235, 205, 0.5);
+        color:rgb(238, 119, 254);
+        box-shadow: 0 0 20px green;
+        font-weight: bolder;
+    }
+    #iconsContainer{
+        display: flex;
+        /* position: absolute; */
+        /* top: 50%;
+        left: 50%; */
+        width: 70vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(9, 213, 245, 0.821);
+        /* margin-right: -50%; */
+        /* transform: translate(-50%, -50%); */
+        /* height: 240px;
+        width: 1200px;     */
+        box-shadow: 0 0 10px rgb(57, 244, 244);
+        border: 5px inset rgba(0, 106, 53, 0.829);    
+        border-radius: 10px;
+        animation: iconanimation 1s ease 1s infinite;
+    }
+    @keyframes iconanimation{
+        0%{
+            box-shadow: 0 0 10px rgb(232, 244, 57);
+        }100%{
+            box-shadow: 0 0 40px rgb(232, 244, 70);
+        }
+    }
+    .icons{
+        /* display: inline-bock; */
+        background-color: rgba(255, 228, 196, 0.505);
+        /* float: left; */
+        width: 60vw;
+        height: 40vh;
+        margin: 20px;
+        border: 5px solid rgb(48, 47, 47);
+        border-radius: 10px;
+    }
+    .image{
+        height: 30vh;
+        width: 100%;
+    }
+    .imgClass{
+        height: 30vh;
+        background-size: contain;
+        width: 100%;
+    }
 }
