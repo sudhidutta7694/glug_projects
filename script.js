@@ -6,12 +6,8 @@ function GetInfo() {
 //For updating online status
 function updateOnlineStatus(event) {
     let status = document.getElementById("status");
-    if(navigator.onLine){
-        // status.innerHTML = "online";
-    }
-    else {
+    if (!navigator.onLine) {
         alert("You Are Offline!\nPlease Turn On Your Internet Connection.");
-        // status.innerHTML = "offline";
     }
     }
     window.addEventListener('online',  updateOnlineStatus);
@@ -20,6 +16,7 @@ function updateOnlineStatus(event) {
 updateOnlineStatus();
 
 fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName+'&appid=32ba0bfed592484379e51106cef3f204')
+//Checking if the response is ok or not
 .then(response => {
     if (!response.ok) {
       switch (response.status) {
@@ -30,7 +27,7 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName+'&appid=32ba
         case 403:
           throw new Error('Forbidden:\nThe server understood the request, but it refuses to authorize it.');
         case 404:
-          throw new Error('Not found:\nThe requested resource could not be found.');
+          throw new Error('Not found:\nThe requested city could not be found.');
         default:
           throw new Error('An error occurred:\nAn error occurred on the server side.');
       }
@@ -39,9 +36,6 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName+'&appid=32ba
   })
 .then(data => {
 
-    if(!data.list){
-        throw new Error("The entered city is invalid!");
-    }
     //Getting the min and max values for each day
     for(let i = 0; i<5; i++){
         document.getElementById("day" + (i+1) + "Min").innerHTML = "Min: " + Number(data.list[i].main.temp_min - 273.15).toFixed(2)+ "°C";
