@@ -128,17 +128,6 @@ button:active {
   transform: translateY(3px);
 }
 
-#weatherContainer{
-    margin: 5vh;
-    width: 70vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(38, 0, 89);
-    box-shadow: 0 0 30px rgb(113, 179, 0);
-    border: 5px ridge rgba(0, 106, 53, 0.829);
-    border-radius: 10px;
-}
 #iconsContainer{
     width:70vw;
     display: flex;
