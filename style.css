@@ -335,7 +335,7 @@ button:active {
         align-items: center;
         background-color: rgba(255, 228, 196, 0.505);
         width: 70vw;
-        height: 43vh;
+        height: 45vh;
         margin: 20px;
         padding: 1vh;
         border: 5px solid rgb(48, 47, 47);
@@ -345,14 +345,14 @@ button:active {
         box-shadow:  0 0 20px rgb(68, 0, 240);
     }
     .image{
-        height: 29vh;
+        height: 31vh;
         width: 100%;
     }
     .image :hover{
-        height: 29vh;
+        height: 32vh;
     }
     .imgClass{
-        height: 28vh;
+        height: 31vh;
         background-size: contain;
         width: 100%;
     }
