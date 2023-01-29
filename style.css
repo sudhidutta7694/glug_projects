@@ -346,7 +346,7 @@ button:active {
     }
     .image{
         height: 31vh;
-        width: 100%;
+        /* width: 100%; */
     }
     .image :hover{
         height: 32vh;
@@ -354,6 +354,36 @@ button:active {
     .imgClass{
         height: 31vh;
         background-size: contain;
-        width: 100%;
+        /* width: 100%; */
+    }
+    @media only screen and (max-height : 400px) {
+        .icons{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 228, 196, 0.505);
+            width: 70vw;
+            height: 55vw;
+            margin: 20px;
+            padding: 1vh;
+            border: 5px solid rgb(48, 47, 47);
+            border-radius: 10px;
+        }
+        .icons:hover{
+            box-shadow:  0 0 20px rgb(68, 0, 240);
+        }
+        .image{
+            height: 39vw;
+            width: 39vw;
+        }
+        .image :hover{
+            height: 40vw;
+        }
+        .imgClass{
+            height: 39vw;
+            background-size: contain;
+            width: 39vw;
+        }
     }
 }
